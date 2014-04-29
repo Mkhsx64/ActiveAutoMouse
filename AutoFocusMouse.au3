@@ -9,7 +9,6 @@ HotKeySet("{Esc}", "Quit")
 
 While 1
    $ActiveWindow = WinGetTitle("[ACTIVE]")
-   ConsoleWrite("Active Window: " & $ActiveWindow)
    $Coords = WinGetPos($ActiveWindow)
    _MouseTrap($Coords[0], $Coords[1], $Coords[0] + $Coords[2], $Coords[1] + $Coords[3])
 WEnd
