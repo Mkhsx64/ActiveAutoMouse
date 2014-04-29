@@ -3,11 +3,17 @@
 #include <MsgBoxConstants.au3>
 #include <Misc.au3>
 
-Local $Coords
+Local $ActiveWindow, $ActiveCheck, $Coords
 
 HotKeySet("{Esc}", "Quit")
 
 While 1
-
+   $ActiveWindow = WinGetState("[ACTIVE]")
+   $Coords = WinGetPos($ActiveWindow)
+   _MouseTrap($Coords[0], $Coords[1], $Coords[0] + $Coords[2], $Coords[1] + $Coords[3])
 WEnd
+
+Func Quit()
+   Exit
+EndFunc
 
