@@ -8,8 +8,8 @@ Local $ActiveWindow, $ActiveCheck, $Coords
 HotKeySet("{Esc}", "Quit")
 
 While 1
-   $ActiveWindow = WinGetState("[ACTIVE]")
-   ConsoleWrite($ActiveWindow)
+   $ActiveWindow = WinGetTitle("[ACTIVE]")
+   ConsoleWrite("Active Window: " & $ActiveWindow)
    $Coords = WinGetPos($ActiveWindow)
    _MouseTrap($Coords[0], $Coords[1], $Coords[0] + $Coords[2], $Coords[1] + $Coords[3])
 WEnd
